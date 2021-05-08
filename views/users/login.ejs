@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Beat Stack - Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <div class="image-div">
+                <img class="image-2" src="/img/zayn.jpg" alt="">
+            </div>
+            <div class="login-page">
+              <div class="layer"></div>
+                <h2 class="title">BEAT STACK</h2>
+                <form action="/users/login" method="POST" id="form">
+                    <div class="form-control" >
+                      <label for="email">
+                        <i class="fas fa-envelope-square"></i>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter email"
+                        id="email"
+                      />
+                      <br />
+                    </div>
+                    <div class="form-control" >
+                      <label for="password">
+                        <i class="fas fa-lock"></i>
+                      </label>
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter password"
+                        id="password"
+                      />
+                      <br />
+                    </div>
+                    <button type="submit" class="register-btn" id="register-btn">
+                      Log In
+                    </button>
+                  </form>
+            </div>
+        </div>
+        <div class="layout"></div>
+    </div>
+
+    <script>
+
+        const image = document.querySelector('.image-2');
+        function myFunction(x) {
+            if (x.matches) {
+                image.setAttribute('src', '/img/zayn-2.jpg')
+            } else {
+                image.setAttribute('src', '/img/zayn.jpg')
+            }
+        }
+
+        var x = window.matchMedia("(max-width: 1000px)")
+        myFunction(x)
+        x.addListener(myFunction)
+
+    </script>
+
+</body>
+</html>

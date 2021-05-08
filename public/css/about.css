@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #aeaeae;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem .5rem 1.5rem;
+    margin: 0 1rem;
+    z-index: 10;
+}
+
+.name, .name-2 {
+    font-size: 1.5rem;
+}
+
+.name a, .name-2 a {
+    text-decoration: none;
+    color: #aeaeae;
+}
+
+.name:hover {
+    color: #ffffffc9;
+    transition: .3s ease-in-out;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.menu {
+    margin-right: 10px;
+}
+
+.bar {
+    margin: 4px 0;
+    background-color: #aeaeae;
+    width: 40px;
+    height: 4px;
+}
+
+.nav:hover .bar {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.nav:hover .menu {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+aside {
+    position: relative;
+    top: 25%;
+    left: 4%;
+    z-index: 20;
+}
+
+aside div {
+    margin: 2rem 0;
+}
+
+aside div a {
+    color: #aeaeae;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.aside div a:hover, .name a:hover {
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.hidden-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    transition: 1s ease-in-out;
+    transform: translateY(100%);
+    z-index: 20;
+}
+
+.active {
+    transform: translateY(0);
+}
+
+.header-2 {
+    border-bottom: none;
+}
+
+.list {
+    margin-top: 4rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list li {
+    margin: 1rem 0;
+}
+
+.list li a {
+    text-decoration: none;
+    color: #aeaeae;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.list li a:hover {
+    font-size: 22px;
+    color: white;
+}
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: -10;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.about {
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.about p {
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+}
+
+#sign {
+    transform: rotate(-10deg);
+    margin-top: 3rem;
+    font-size: 3.5rem;
+    font-family: 'Mrs Saint Delafield', sans-serif;
+}
+
+@media (max-width: 1120px) {
+    body {
+        overflow-y: visible;
+        overflow-x: hidden;
+        z-index: -20;
+        background: url('./img/screen.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: repeat-y;
+    }
+    .screen {
+        grid-template-columns: 1fr;
+        z-index: 10;
+        padding: 2rem 4rem;
+        line-height: default;
+        color: white;
+        margin-top: 3rem;
+    }
+    .about {
+        background-color: transparent;
+    }
+    .about p {
+        font-size: 1rem;
+    }
+    .image {
+        display: none;
+    }
+    .container {
+        min-height: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .screen {
+        padding: 2rem;
+    }
+    .about h1 {
+        font-size: 24px;
+    }
+    .about p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .screen {
+        padding: 0 0 0 2rem;
+        margin: 0;
+    }
+    .about h1 {
+        font-size: 18px;
+    }
+    .about p {
+        font-size: .8rem;
+        line-height: 1rem;
+    }
+}
+
+@media (max-height: 650px) {
+    body {
+        overflow-y: visible;
+    }
+}

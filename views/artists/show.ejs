@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/show.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <title>Beat Stack - Artist</title>
+</head>
+<body>
+
+    <img class="background" src="/img/background-2.jpg" alt="blur">
+
+    <header>
+        <h3 class="name"><a href="#">VISHRUT M</a></h3>
+        <div class="nav">
+            <div class="menu">MENU</div>
+            <div class="bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <aside>
+        <div class="yt"><a href="#">YT</a></div>
+        <div class="fb"><a href="#">FB</a></div>
+        <div class="ig"><a href="#">IG</a></div>
+    </aside>
+
+    <div class="container">
+        <div class="title">
+            <p>ARTIST</p>
+        </div>
+
+        <div class="artists">
+            <div class="artist">
+                <div class="image">
+                    <img src="<%= artist.artistCoverImagePath %>" alt="neon">
+                </div>
+                <div class="info">
+                    <div class="layer"></div>
+                    <h2><%= artist.name %></h2>
+                    <p><%= artist.description %></p>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="title-2">SONGS BY ARTIST</h1>
+
+        <div class="songs">
+            <div class="song">
+                <img src="/img/panther.jpg" alt="">
+                <div class="layer"></div>
+                <div class="info">
+                    <h3>BlindLights</h3>
+                    <p>Vishrut M</p>
+                    <div class="icon">
+                        <i class="fas fa-play play"></i>
+                        <i class="fas fa-pause pause"></i>
+                        <audio src="/music/hey.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="song">
+                <img src="/img/panther.jpg" alt="">
+                <div class="layer"></div>
+                <div class="info">
+                    <h3>BlindLights</h3>
+                    <p>Vishrut M</p>
+                    <div class="icon">
+                        <i class="fas fa-play play"></i>
+                        <i class="fas fa-pause pause"></i>
+                        <audio src="/music/summer.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="song">
+                <img src="/img/panther.jpg" alt="">
+                <div class="layer"></div>
+                <div class="info">
+                    <h3>BlindLights</h3>
+                    <p>Vishrut M</p>
+                    <div class="icon">
+                        <i class="fas fa-play play"></i>
+                        <i class="fas fa-pause pause"></i>
+                        <audio src="/music/ukulele.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="hidden-nav">
+            <header class="header-2">
+                <h3 class="name-2"><a href="#">VISHRUT M</a></h3>
+                <div class="nav-2">
+                    <div class="menu-2 close">CLOSE</div>
+                </div>
+            </header>
+    
+            <ul class="list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/artists">Artists</a></li>
+                <li><a href="/artists/new">Add Artists</a></li>
+                <li><a href="/songs">Songs</a></li>
+                <li><a href="/songs/new">Add Songs</a></li>
+                <li><a href="/users/logout">Logout</a></li>
+            </ul>
+        </div>
+
+    </div>
+    
+    <script src="/js/show.js"></script>
+</body>
+</html>

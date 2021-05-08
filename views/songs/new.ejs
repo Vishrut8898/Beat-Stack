@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+    <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/add-song.css">
+    <script defer src="/js/add-song.js"></script>
+    <title>Beat Stack</title>
+</head>
+<body>
+
+    <img class="background" src="/img/background.jpg" alt="">
+    <div class="container">
+        <header class="header-1">
+            <h3 class="name"><a href="#">VISHRUT M</a></h3>
+            <div class="nav">
+                <div class="menu">MENU</div>
+                <div class="bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </header>
+        <div class="title">
+            <p>ADD SONGS</p>
+        </div>
+        <aside>
+            <div class="yt"><a href="#">YT</a></div>
+            <div class="fb"><a href="#">FB</a></div>
+            <div class="ig"><a href="#">IG</a></div>
+        </aside>
+    </div>
+
+    <div class="add-songs">
+        <div class="layer"></div>
+        <form action="/songs" method="POST" enctype="application/x-www-form-urlencoded" class="form mx-2 px-3">
+            <div class="title mx-4">
+                <input type="text" name="title" placeholder="Song Title">
+            </div>
+            <div class="artist mx-4">
+                <select name="artist">
+                    <% artists.forEach(artist => { %>
+                        <option><%= artist.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="custom-file my-4 px-4">
+                <input type="file" name="audio" class="custom-file-input song" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+              </div>
+            <div class="song-cover my-1">
+                <label for="song-cover">Add Song Cover</label>
+                <input type="file" name="songCover" class="song-photo filepond">
+            </div>
+            <div class="post">
+                <button type="submit">POST</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="hidden-nav">
+        <header class="header-2">
+            <h3 class="name-2"><a href="#">VISHRUT M</a></h3>
+            <div class="nav">
+                <div class="menu closy">CLOSE</div>
+            </div>
+        </header>
+
+        <ul class="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/artists">Artists</a></li>
+            <li><a href="/artists/new">Add Artists</a></li>
+            <li><a href="/songs">Songs</a></li>
+            <li><a href="/songs/new">Add Songs</a></li>
+            <li><a href="/users/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const audio = document.querySelector('#customFile');
+
+        audio.addEventListener('change', () => {
+            console.log(audio.value);
+            console.log('changed')
+        })
+    </script>
+
+</body>
+</html>
